@@ -19,22 +19,28 @@ const formFields = {
       order: 1,
       placeholder: "Choose a username",
       label: "Username",
-      inputProps: { required: true },
+      inputProps: { type:"text", required: true },
+    },
+    preferred_username: {
+      order: 2,
+      placeholder: "Enter a display name",
+      label: "Display Name",
+      inputProps: { type: "text", required: true },
     },
     email: {
-      order: 1,
+      order: 3,
       placeholder: "Enter your email address",
       label: "Email",
       inputProps: { type: "email", required: true },
     },
     password: {
-      order: 3,
+      order: 4,
       placeholder: "Enter your password",
       label: "Password",
       inputProps: { type: "password", required: true },
     },
     confirm_password: {
-      order: 4,
+      order: 5,
       placeholder: "Confirm your password",
       label: "Confirm Password",
       inputProps: { type: "password", required: true },
@@ -44,7 +50,7 @@ const formFields = {
 
 const AuthProvider = ({ children }: any) => {
   return (
-    <div>
+    <div className="mt-5">
       <Authenticator formFields={formFields}>
         {({ user }: any) =>
           user ? (
